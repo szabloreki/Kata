@@ -75,3 +75,27 @@ const array_diff = (a, b)=>{
   }
   return a;
 }
+const  countAdjacentPairs = (searchString)=>{
+  var arrLoverCase = searchString.toLowerCase()
+  var arr = arrLoverCase.split(' ')
+  let counter = 0;
+  arr.filter(x=>{
+    return x.indexOf(' ') == -1
+  })
+  for( let i = 0; i<arr.length; i++){
+    if(arr[i] == arr[i +1]){
+      counter++;
+      i++;
+      let word = arr[i]
+      while(arr[i] == word){
+        i++;
+      }
+    }
+  }
+  return counter
+}
+// >2  zwraca 1  - mają sąsiadowac białe spacje nie mają znaczenia
+//mze byc wiecej niz dwa jesli ze soba nie sasiaduja
+ - jeden czy obok jest kolejny if no to idzie dalej
+     daje 1 konczy -  jesli jest kolejny to pomija tak dluga jak znajdzie inne slowo
+
