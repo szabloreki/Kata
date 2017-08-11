@@ -69,3 +69,9 @@ function solution(){
   }
   return false
 }
+const array_diff = (a, b)=>{
+  while(a.indexOf(b[0]) !== -1){
+   a.splice(a.indexOf(b[0]), 1)
+  }
+  return a;
+}
