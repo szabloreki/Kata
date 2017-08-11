@@ -51,3 +51,21 @@ const isEqArrays = (arr1, arr2)=>{
   }
   return true;
 }
+
+const sortme = ( names )=>{
+    
+}
+//Duplicate arguments
+function solution(){
+  let arr = Array.from(arguments)
+  let duplicates = []
+  for(el of arr){
+    if(duplicates.indexOf(el) == -1){
+      duplicates.push(el)
+    }
+    else{
+      return true
+    }
+  }
+  return false
+}
