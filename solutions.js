@@ -94,6 +94,38 @@ const  countAdjacentPairs = (searchString)=>{
   }
   return counter
 }
+const titleCase =  (title, minorWords)=>{
+  let = finded = false
+  var arr = title.toLowerCase().split(' ')
+  var minor = null
+  if(minorWords !== undefined){
+    minor  = minorWords.toLowerCase().split(' ')
+  }
+  for(var i = 0; i<arr.length; i++){
+    finded = false
+    if( minorWords !== undefined){
+      for(el of minor){
+        if(el == arr[i]){
+            finded = true;
+            break;
+        }
+      }
+    }
+    if(i == 0){
+          arr[i] = arr[i].charAt(0).toUpperCase() + arr[i].slice(1);
+    }
+    if(finded){
+      continue
+    }
+    arr[i] = arr[i].charAt(0).toUpperCase() + arr[i].slice(1);
+  }
+  return arr.join(' ')
+}
+
+
+
+
+
 // >2  zwraca 1  - mają sąsiadowac białe spacje nie mają znaczenia
 //mze byc wiecej niz dwa jesli ze soba nie sasiaduja
  - jeden czy obok jest kolejny if no to idzie dalej
