@@ -141,6 +141,20 @@ const zipObject = (keys, values)=>{
   return obj
 }
 
+const isIntArray = (arr)=>{ 
+  if(Array.isArray(arr)) 
+    return  arr.every(x=>{
+      if(Number.isInteger(x)){
+        return true
+      }
+      return false
+    })
+
+  return false
+}
+//better way
+  return Array.isArray(arr) && arr.every(x=>{return Number.isInteger(x)} /// cv
+}
 
 
 
