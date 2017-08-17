@@ -122,6 +122,24 @@ const titleCase =  (title, minorWords)=>{
   return arr.join(' ')
 }
 
+const zipObject = (keys, values)=>{
+  let obj = {}
+  if(keys == undefined){
+  return {}
+  }
+ for( let i = 0; i< keys.length; i++){
+    if(values == undefined && keys[0].length == 2){
+      obj[keys[i][0]] = keys[i][1]
+      continue
+    }
+    if(values == undefined){
+      obj[keys[i]] = undefined
+      continue
+    }
+    obj[keys[i]] = values[i]
+  }
+  return obj
+}
 
 
 
